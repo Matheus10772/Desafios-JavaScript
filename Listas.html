@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Estudo HTML Leo</title>
+    </head>
+    <body onload="carregamentoincial()">
+        <h1>Listas</h1>
+        
+        <!-- Listas ordenadas -->
+        <h2>Aprovados.</h2>
+        <!-- Lista ordenada -->
+        <ol>
+            <li>João</li>
+            <li>Ana</li>
+            <li>Matheus</li>
+        </ol>
+        
+        <!-- Listas não ordenadas -->
+        <h2>Listas de compras.</h2>
+        <ul>
+            <li>Queijo.</li>
+            <li>Leite.</li>
+            <li>Arroz.</li>
+        </ul>
+        
+        <!-- Listas de definições. -->
+        <h2>Principais termos do glossário de Cloud Computing.</h2>
+        <dl>
+            <dt>BaaS</dt> <!-- Termos.-->
+            <dd>Backend como serviço</dd> <!-- Definição do termo acima-->
+        </dl>
+        
+        <!-- Listas Aninhadas. -->
+        
+        <h2 >Lista aninhada.</h2>
+        
+        <ul class="tree">
+            <li>
+                <span name="option" id='teste'>Backend</span>
+                <br/>
+                <span name="option"> app</span>
+                <ul >
+                        <li>Produto.js</li>
+                        <li>Usuário.js</li>
+                        <li>Venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span name="option">config</span> 
+                
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+        </ul>
+    <script>
+        function carregamentoincial(){
+        let options = document.getElementsByTagName('span')
+        console.log(options)
+        for(let index = 0; index < options.length; index++){
+            options[index].addEventListener('click', ()=>{
+                let elemento = options[index].nextElementSibling
+                while(elemento.tagName != 'LI'){
+                    ocultarMostrar(elemento)
+                    elemento = elemento.nextElementSibling //Pega o próximo elemento
+                }
+            })
+        }
+    }
+    function ocultarMostrar(Elemento){
+        console.log('Elemento')
+        if(Elemento.style.display === 'none'){
+            Elemento.style.display = null
+        }
+        else{
+            console.log('ocultou')
+            Elemento.style.display = 'none'
+            console.log(Elemento)
+        }
+    }
+    </script>
+    </body>
+</html>
+
