@@ -1,0 +1,27 @@
+<video id="meuprimeirovideo" width="800" height="600" controls controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+</video>
+
+<div wm-progresso="meuprimeirovideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="" class="videoControl">Play</button>
+</div>
+
+<style>
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border: solid 2px grey;
+        margin: 30px;
+    }
+    .progresso > div{
+        background-color: red;
+        color: white;
+        height: 100%;
+        width: 0%;
+    }
+</style>
+<script src="./video.js"></script>
